@@ -2,4 +2,14 @@
 <resources>
     <string name="hello">Hello World, Exchangeinfo!</string>
     <string name="app_name">Exchange info</string>
+    <string name="select_operation">Select operation</string>
+    <string name="select_currency">Select currency</string>
+    <string name="buy">Buy</string>
+    <string name="sell">Sell</string>
+    <string name="usd">$</string>
+    <string name="eur">€</string>
+    <string name="btn_buy_usd">Buy Dollars</string>
+    <string name="btn_buy_eur">Buy Euro</string>
+    <string name="btn_sell_usd">Sell Dollars</string>
+    <string name="btn_sell_eur">Sell Euro</string>
 </resources>

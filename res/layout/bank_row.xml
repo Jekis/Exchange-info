@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" android:padding="5px">
+    <TextView android:text="Moldova Agroindbank sd fsdf sd sdf sdf sdf " android:id="@+id/name" android:layout_width="wrap_content" android:width="100px" android:layout_height="wrap_content" android:padding="10px"></TextView>
+    <TextView android:text="12.89" android:textStyle="bold" android:textColor="#66cc00" android:id="@+id/actualRate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="10px"></TextView>
+    <TextView android:text="11.77" android:textColor="#666" android:id="@+id/secondRate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="10px"></TextView>
+    
+</TableRow>
