@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_operation">Выберите операцию</string>
+    <string name="select_currency">Выберите валюту</string>
+    <string name="buy">Купить</string>
+    <string name="sell">Продать</string>
+    <string name="btn_buy_usd">Купить доллары</string>
+    <string name="btn_buy_eur">Купить евро</string>
+    <string name="btn_sell_usd">Продать доллары</string>
+    <string name="btn_sell_eur">Продать евро</string>
+</resources>

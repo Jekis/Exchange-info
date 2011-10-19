@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_operation">Selectаţi operaţiune</string>
+    <string name="select_currency">Selectаţi valuta</string>
+    <string name="buy">Cumpăra</string>
+    <string name="sell">Vinde</string>
+    <string name="btn_buy_usd">Cumpăra dolari</string>
+    <string name="btn_buy_eur">Cumpăra euro</string>
+    <string name="btn_sell_usd">Vinde dolari</string>
+    <string name="btn_sell_eur">Vinde euro</string>
+</resources>
