@@ -4,8 +4,10 @@
     <string name="select_currency">Selectаţi valuta</string>
     <string name="buy">Cumpăra</string>
     <string name="sell">Vinde</string>
-    <string name="btn_buy_usd">Cumpăra dolari</string>
-    <string name="btn_buy_eur">Cumpăra euro</string>
-    <string name="btn_sell_usd">Vinde dolari</string>
-    <string name="btn_sell_eur">Vinde euro</string>
+    <string name="usd">Dolari SUA</string>
+    <string name="eur">Euro</string>
+    <string name="btn_buy_usd">Cumpăra Dolari SUA</string>
+    <string name="btn_buy_eur">Cumpăra Euro</string>
+    <string name="btn_sell_usd">Vinde Dolari SUA</string>
+    <string name="btn_sell_eur">Vinde Euro</string>
 </resources>

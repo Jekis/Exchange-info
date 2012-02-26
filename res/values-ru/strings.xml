@@ -4,8 +4,10 @@
     <string name="select_currency">Выберите валюту</string>
     <string name="buy">Купить</string>
     <string name="sell">Продать</string>
-    <string name="btn_buy_usd">Купить доллары</string>
-    <string name="btn_buy_eur">Купить евро</string>
-    <string name="btn_sell_usd">Продать доллары</string>
-    <string name="btn_sell_eur">Продать евро</string>
+    <string name="usd">Доллары США</string>
+    <string name="eur">Евро</string>
+    <string name="btn_buy_usd">Купить Доллары США</string>
+    <string name="btn_buy_eur">Купить Евро</string>
+    <string name="btn_sell_usd">Продать Доллары США</string>
+    <string name="btn_sell_eur">Продать Евро</string>
 </resources>

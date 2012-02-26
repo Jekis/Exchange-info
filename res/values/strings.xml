@@ -6,10 +6,10 @@
     <string name="select_currency">Select currency</string>
     <string name="buy">Buy</string>
     <string name="sell">Sell</string>
-    <string name="usd">$</string>
-    <string name="eur">€</string>
-    <string name="btn_buy_usd">Buy Dollars</string>
+    <string name="usd">US Dollars</string>
+    <string name="eur">Euro</string>
+    <string name="btn_buy_usd">Buy US Dollars</string>
     <string name="btn_buy_eur">Buy Euro</string>
-    <string name="btn_sell_usd">Sell Dollars</string>
+    <string name="btn_sell_usd">Sell US Dollars</string>
     <string name="btn_sell_eur">Sell Euro</string>
 </resources>
