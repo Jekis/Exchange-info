@@ -4,6 +4,7 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -126,8 +127,10 @@ public abstract class ExchangeSiteParser extends SiteParser {
         StringBuilder xml = new StringBuilder();
 
         xml.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
-        // TODO: Add date to the file.
-        xml.append("<banks date=\"\">\n");
+        // Add date timestamp.
+        Date now = new Date();
+        long nowTime = now.getTime();
+        xml.append("<banks date=\"" + Long.toString(nowTime) + "\">\n");
 
         for (String bankRow : this.extractBankRows(this.exchangePageContent)) {
             String bankName = this.extractBankName(bankRow);
@@ -241,7 +244,7 @@ public abstract class ExchangeSiteParser extends SiteParser {
      */
     public static Map<String, Object> parseXml(String xml) {
         Map<String, Object> xmlMap = new HashMap<String, Object>();
-        String xmlDate = "";
+        long xmlDate = 0L;
         ArrayList<Bank> banks = new ArrayList<Bank>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
@@ -251,7 +254,7 @@ public abstract class ExchangeSiteParser extends SiteParser {
 
             // Get the root element.
             Element rootEle = dom.getDocumentElement();
-            xmlDate = rootEle.getAttribute("date");
+            xmlDate = new Long(rootEle.getAttribute("date"));
 
             // Get a nodelist of elements.
             NodeList bankList = rootEle.getElementsByTagName("bank");

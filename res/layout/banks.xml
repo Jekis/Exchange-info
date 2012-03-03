@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ScrollWraper"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <TableLayout
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent" android:stretchColumns="0" android:id="@+id/banksTable" android:paddingTop="10px" android:paddingBottom="200px">
-    </TableLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/ScrollWraper" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<TableLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:stretchColumns="0"
+		android:id="@+id/banksTable" android:paddingTop="10px"
+		android:paddingBottom="200px">
+		<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="vertical" android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+			<TextView android:text="суббота, 1 января" android:id="@+id/headDate"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:padding="10px" android:textColor="#FFA500"></TextView>
+			<TextView android:text="" android:textStyle="bold"
+				android:textColor="#66cc00" android:id="@+id/headEmpty"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:padding="10px"></TextView>
+			<TextView android:text="18:30" android:textColor="#FFA500"
+				android:id="@+id/headTime" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:padding="10px"
+				android:textStyle="bold"></TextView>
+
+		</TableRow>
+
+	</TableLayout>
 </ScrollView>

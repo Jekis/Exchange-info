@@ -23,7 +23,7 @@ public class SplashActivity extends Activity {
         // Later, this code will be used to identify the message in Handler
         // class.
         msg.what = 0;
-        // Send the message with a delay of 3 seconds(3000 = 3 sec).
+        // Send the message with a delay.
         mHandler.sendMessageDelayed(msg, 2000);
     }
 

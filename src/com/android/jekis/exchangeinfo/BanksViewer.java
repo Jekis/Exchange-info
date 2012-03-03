@@ -1,6 +1,8 @@
 package com.android.jekis.exchangeinfo;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
 
 import android.app.Activity;
@@ -16,6 +18,8 @@ public class BanksViewer extends Activity {
     private String currencyCharcode;
     private String userOperationType;
     private Map<String, Object> banksDataMap;
+    private TextView dateCell;
+    private TextView timeCell;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,13 @@ public class BanksViewer extends Activity {
         // Get intent extra paramaters.
         this.currencyCharcode = this.getIntent().getStringExtra("currencyCharcode");
         this.userOperationType = this.getIntent().getStringExtra("operationType");
+
+        this.dateCell = (TextView) this.findViewById(R.id.headDate);
+        this.timeCell = (TextView) this.findViewById(R.id.headTime);
+        // Remove dummy content from layout.
+        this.dateCell.setText("");
+        this.timeCell.setText("");
+
         new BackgroundAsyncTask().execute();
     }
 
@@ -46,6 +57,15 @@ public class BanksViewer extends Activity {
      */
     private void showBanksList() {
         TableLayout tl = (TableLayout) this.findViewById(R.id.banksTable);
+
+        // Show list date.
+        long time = (Long) this.banksDataMap.get("date");
+        Date date = new Date(time);
+
+        SimpleDateFormat formatter = new SimpleDateFormat("EEEE, d MMMM");
+        this.dateCell.setText(formatter.format(date));
+        formatter = new SimpleDateFormat("HH:mm");
+        this.timeCell.setText(formatter.format(date));
 
         // Loop through banks.
         @SuppressWarnings("unchecked")
