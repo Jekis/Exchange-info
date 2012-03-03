@@ -12,4 +12,6 @@
     <string name="btn_buy_eur">Buy Euro</string>
     <string name="btn_sell_usd">Sell US Dollars</string>
     <string name="btn_sell_eur">Sell Euro</string>
+    <string name="progressDialogTitle">Loading...</string>
+    <string name="progressDialogMessage">Getting banks data</string>
 </resources>

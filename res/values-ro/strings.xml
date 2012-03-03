@@ -10,4 +10,6 @@
     <string name="btn_buy_eur">Cumpăra Euro</string>
     <string name="btn_sell_usd">Vinde Dolari SUA</string>
     <string name="btn_sell_eur">Vinde Euro</string>
+    <string name="progressDialogTitle">Încărcare...</string>
+    <string name="progressDialogMessage">Se obţin datele banсare</string>
 </resources>

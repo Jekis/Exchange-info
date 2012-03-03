@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.TableLayout;
@@ -11,7 +13,9 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 public class BanksViewer extends Activity {
-    public static String BANKS_XML = "banks";
+    private String currencyCharcode;
+    private String userOperationType;
+    private Map<String, Object> banksDataMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,26 +23,37 @@ public class BanksViewer extends Activity {
         this.setContentView(R.layout.banks);
 
         // Get intent extra paramaters.
-        String currencyCharcode = this.getIntent().getStringExtra("currencyCharcode");
-        String operationType = this.getIntent().getStringExtra("operationType");
+        this.currencyCharcode = this.getIntent().getStringExtra("currencyCharcode");
+        this.userOperationType = this.getIntent().getStringExtra("operationType");
+        new BackgroundAsyncTask().execute();
+    }
 
-        TableLayout tl = (TableLayout) this.findViewById(R.id.banksTable);
-
+    /**
+     * Loads list of banks.
+     */
+    private void loadBanksList() {
         // Get banks data.
         CursMdExchangeSiteParser cursMd = new CursMdExchangeSiteParser();
         String sortingField = "buyPrice";
-        if (operationType.equals("buy")) {
+        if (this.userOperationType.equals("buy")) {
             sortingField = "sellPrice";
         }
-        Map<String, Object> banksDataMap = cursMd.getBanksData(currencyCharcode, sortingField);
+        this.banksDataMap = cursMd.getBanksData(this.currencyCharcode, sortingField);
+    }
+
+    /**
+     * Shows list of banks.
+     */
+    private void showBanksList() {
+        TableLayout tl = (TableLayout) this.findViewById(R.id.banksTable);
 
         // Loop through banks.
         @SuppressWarnings("unchecked")
-        ArrayList<Bank> banks = (ArrayList<Bank>) banksDataMap.get("banks");
+        ArrayList<Bank> banks = (ArrayList<Bank>) this.banksDataMap.get("banks");
         for (int i = 0; i < banks.size(); i++) {
             Bank bank = banks.get(i);
-            Currency currency = bank.getCurrency(currencyCharcode);
-            if (operationType.equals("buy")) {
+            Currency currency = bank.getCurrency(this.currencyCharcode);
+            if (this.userOperationType.equals("buy")) {
                 // Add bank sell price to highlighted column.
                 tl.addView(this.createRow(bank.getName(), Float.toString(currency.sellPrice), Float.toString(currency.buyPrice)));
             } else {
@@ -46,7 +61,6 @@ public class BanksViewer extends Activity {
                 tl.addView(this.createRow(bank.getName(), Float.toString(currency.buyPrice), Float.toString(currency.sellPrice)));
             }
         }
-
     }
 
     private TableRow createRow(String bankName, String actualRate, String secondRate) {
@@ -62,5 +76,32 @@ public class BanksViewer extends Activity {
         secondRateView.setText(secondRate);
 
         return row;
+    }
+
+    private class BackgroundAsyncTask extends AsyncTask<Void, Boolean, Void> {
+        ProgressDialog pd;
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            BanksViewer.this.loadBanksList();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            this.pd.dismiss();
+            BanksViewer.this.showBanksList();
+        }
+
+        @Override
+        protected void onPreExecute() {
+            String title = BanksViewer.this.getString(R.string.progressDialogTitle);
+            String message = BanksViewer.this.getString(R.string.progressDialogMessage);
+            this.pd = ProgressDialog.show(BanksViewer.this, title, message, true, false);
+        }
+
+        @Override
+        protected void onProgressUpdate(Boolean... values) {
+        }
     }
 }

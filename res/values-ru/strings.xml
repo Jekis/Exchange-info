@@ -10,4 +10,6 @@
     <string name="btn_buy_eur">Купить Евро</string>
     <string name="btn_sell_usd">Продать Доллары США</string>
     <string name="btn_sell_eur">Продать Евро</string>
+    <string name="progressDialogTitle">Загрузка...</string>
+    <string name="progressDialogMessage">Получение данных о банках</string>
 </resources>
