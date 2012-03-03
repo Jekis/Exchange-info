@@ -2,4 +2,16 @@
 <resources>
     <string name="hello">Hello World, Exchangeinfo!</string>
     <string name="app_name">Exchange info</string>
+    <string name="select_operation">Select operation</string>
+    <string name="select_currency">Select currency</string>
+    <string name="buy">Buy</string>
+    <string name="sell">Sell</string>
+    <string name="usd">US Dollars</string>
+    <string name="eur">Euro</string>
+    <string name="btn_buy_usd">Buy US Dollars</string>
+    <string name="btn_buy_eur">Buy Euro</string>
+    <string name="btn_sell_usd">Sell US Dollars</string>
+    <string name="btn_sell_eur">Sell Euro</string>
+    <string name="progressDialogTitle">Loading...</string>
+    <string name="progressDialogMessage">Getting banks data</string>
 </resources>

@@ -3,10 +3,16 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
+    android:padding="10dp">
+    <TextView android:id="@+id/textView1" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/select_operation"></TextView>
+    <RadioGroup android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/radioGroupOperation">
+        <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/buy" android:id="@+id/radio_buy"></RadioButton>
+        <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sell" android:id="@+id/radio_sell"></RadioButton>
+    </RadioGroup>
+    <TextView android:id="@+id/textView2" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/select_currency"></TextView>
+    <RadioGroup android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/radioGroupCurrency">
+        <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/usd" android:id="@+id/radio_usd"></RadioButton>
+        <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/eur" android:id="@+id/radio_eur"></RadioButton>
+    </RadioGroup>
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OK" android:minWidth="100dp" android:id="@+id/submit" android:layout_gravity="center_horizontal"></Button>
 </LinearLayout>
